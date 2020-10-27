@@ -8,6 +8,13 @@ class HamroApp extends StatefulWidget {
 }
 
 class _HamroAppState extends State<HamroApp> {
+  String name = "Hello Universe";
+
+  void _onClick(){
+    setState(() {
+      name = DateTime.now().toString();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +24,10 @@ class _HamroAppState extends State<HamroApp> {
       body: Container(
         child: Column(
           children: <Widget>[
-            Text('Hello Universe')
+            Text(name),
+            RaisedButton(onPressed: (){},child: Text("Click Me"),),
+            FlatButton(onPressed: _onClick, child: Text('Flat Button'),),
+            IconButton(onPressed: _onClick, icon: Icon(Icons.add),)
           ],
         ),
       ),
