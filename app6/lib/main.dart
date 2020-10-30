@@ -24,7 +24,14 @@ class _HamroAppState extends State<HamroApp> {
           children: <Widget>[
             Switch(
               value: _value, onChanged: _onChangeSwitch,
-            )
+            ),
+            SwitchListTile(
+              value: _value,
+              onChanged: _onChangeSwitch,
+              activeColor : Colors.blue,
+              subtitle : Text('Are you married?'),
+              title: Text('Maritial Status'),
+              )
           ],
         ),
       ),
