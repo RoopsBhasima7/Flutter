@@ -7,6 +7,12 @@ class HamroApp extends StatefulWidget {
 }
 
 class _HamroAppState extends State<HamroApp> {
+  bool _value = false;
+  void _onChangeSwitch(bool value){
+    setState(() {
+      _value = value;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +21,11 @@ class _HamroAppState extends State<HamroApp> {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[],
+          children: <Widget>[
+            Switch(
+              value: _value, onChanged: _onChangeSwitch,
+            )
+          ],
         ),
       ),
     );
